@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>CSS Example</title>
+    
     <link rel="stylesheet" href="style.css">
+
 body {
 	font-family: arial, helvetica;
 	font-size: 14px;
@@ -12,20 +15,44 @@ body {
 h1 {
 	font-family: arial, helvetica;
 	text-transform: uppercase;
-	color:yellow;
-	background-color:green;
+	color: yellow;
+	background-color: green;
 	text-align: center;
+	margin: 0;
+	margin-bottom: 7px;
+	padding: 4px;
+	font-style: italic;
+	border-bottom-style: solid;
+	border-bottom-width: 0.5em;
+	border-bottom-color: #c00;
 }
 
 h2 {
+	border-style: dashed;
+	border-width: 3px;
+	border-left-width: 10px;
+	border-right-width: 10px;
+	border-color: red;
 	font-size: 1.5em;
 	font-family: arial, helvetica;
 	text-transform: uppercase;
-	color: orange;
-	background-color: #ccc;
+	color: white;
+	background-color: #090;
 	text-align: center;
-	margin: 20px;
-	padding: 40px;
+	margin: 0;
+	padding: 2px;
+	padding-left: 14px;
+}
+
+h3 {
+	color: #999;
+	font-size: 1.25em;
+}
+
+img {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #ccc;
 }
 
 a {
@@ -33,17 +60,20 @@ a {
 	color: green;
 }
 
+li {
+	color: #900;
+	font-style: italic;
+}
+
 p {
 	letter-spacing: 0.5em;
 	word-spacing: 2em;
-	line-height: 1.5;
+	line-height: 21px;
 	text-align: center;
 }
 
 table {
-	background-color: #414141;
-	color:white;
-	text-align: center;
-}
+	background-color: #ccc;
+	}
 
 </head>

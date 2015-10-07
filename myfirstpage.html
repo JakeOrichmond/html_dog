@@ -2,7 +2,9 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style.css">
+	<script src="myfirstpage.js"></script>
 	<title>My first web page</title>
+
 <body>
 	<h1>My first web page</h1>
 
@@ -24,12 +26,67 @@
 				</ol>
 			</li>
 			<li>Because I've fallen in love with my computer and want  to give her some HTML loving</li>
+		</ul>
 	<h2>Why this is</h2>
 		<p>To learn HTML</p>
 		<p>How exciting</p>
 		<p>Yes, that really <em>is</em> exciting. <strong>Warning:</strong> level of excitement may cause head to explode.</p>
 	<h2>Where to find the tutorial</h2>
 		<p><a href="http://www.htmldog.com">HTML Dog</a></p>
+
+	<h1>Some random glossary thing</h1>
+	<dl>
+	    <dt>HTML</dt>
+	    <dd>Abbreviation for HyperText Markup Language - a language used to make web pages.</dd>
+
+	    <dt>Dog</dt>
+	    <dd>Any carnivorous animal belonging to the family Canidae.</dd>
+	    <dd>The domesticated sub-species of the family Canidae, Canis lupus familiaris.</dd>
+
+	    <dt>Moo juice</dt>
+	    <dt>Cat beer</dt>
+	    <dt>Milk</dt>
+	    <dd>A white liquid produced by cows and used for human consumption.</dd>
+	</dl>
+	
+<blockquote>
+    <p>He wants to play with his <mark>Legos</mark></p>
+</blockquote>
+
+<p>The person being quoted is clearly American because, for some odd reason, they pluralise "Lego".</p
+
+		<body>
+	<article>
+	    <header>
+	        <h1>Alternatively&hellip;</h1>
+	        <p>[An introduction]</p>
+	    </header>
+	    <section id="main_content">
+	        <p>[Content]</p>
+	    </section>
+	    <footer>
+	        <p>[End notes]</p>
+	    </footer>
+	</article>
+	<footer>
+	    <p>[Copyright bumf]</p>
+	</footer>
+		</body>
+
+	<article>
+	    <section id="intro">
+	        <p>[An introduction]</p>
+	    </section>
+	    <section id="main_content">
+	        <p>[Content]</p>
+	    </section>
+	    <section id="related">
+	        <ul>
+	            <li><a href="that.html">That related article</a></li>
+	            <li><a href="this.html">This related article</a></li>
+	        </ul>
+	    </section>
+	</article>
 
 	<table>
 		<tr>
@@ -51,7 +108,29 @@
 			<td>Row 4, cell 1</td>
 			<td>Row 4, cell 2</td>
 			<td>Row 4, cell 3</td>
+		</tr>
 	</table>
+
+	<table>
+    <tr>
+        <th>Column 1 heading</th>
+        <th>Column 2 heading</th>
+        <th>Column 3 heading</th>
+    </tr>
+    <tr>
+        <td>Row 2, cell 1</td>
+        <td colspan="2">Row 2, cell 2, also spanning Row 2, cell 3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Row 3, cell 1, also spanning Row 4, cell 1</td>
+        <td>Row 3, cell 2</td>
+        <td>Row 3, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 4, cell 2</td>
+        <td>Row 4, cell 3</td>
+    </tr>
+</table>
 
 <h3>Some random form</h3>
 	<p><strong>Note:</strong> It looks the part but won't do anything.</p>
@@ -72,5 +151,21 @@
 
 		<p><input type="submit"></p>
 	</form>
+
+	<bdo dir="rtl">god lmth</bdo>
+	<bdo dir="ltr">god lmth</bdo>
+
+	<h3>Author contact details</h3>
+	<address>
+	<ul>
+		<li>Jake Richmond</li>
+	    <li>503-348-6199</li>
+	    <li>jakeorichmond@gmail.com</li>
+	    <li>github.com/jakeorichmond</li>
+	</ul>
+	</address>
+
 </body>
+
+
 </html>
