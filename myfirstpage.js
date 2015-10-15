@@ -49,3 +49,69 @@ var result = add(1,2); // result is now 3
 
 // This calls add with the arguments 1 and 2, which, inside add. will be saved in the 
 // variables a and b.
+
+// JavaScript objects are like real life objects; they have properties and abilities.
+// A JavaScript object is, in that sense, a collection of named properties and
+// methods - a function. An object can be stored in a variable, and the properties 
+// and methods acessed using the dot syntax. A human, for example, has a name and an age,
+// and could talk, move or learn JavaScript. Name and age are properties of the human, and 
+// are essentially pieces of data. Talking, moving, and learning are more like functions,
+// there is some complex behavior involved. When a JavaScript object has such an ability,
+// it is called a method.
+
+// Variables can hold objects, and creating an object is done using a special syntax
+// signified by braces:
+
+var jedi = {
+	name: "Yoda",
+	age: 899,
+	talk: function () { aler("another... Sky... walk..."); }
+};
+
+// In the above example the Jedi's name and age are properties - they are essentially
+// variables within the object and can store anything a variable can. talk is a property
+// that holds a function - a method.
+
+// You can get back data out of an object using the dot syntax:
+// Examples:
+
+jedi.name;
+
+jedi.age;
+
+jedi.talk();
+
+// You can also reassign properties of an object:
+
+jedi.name = "Mace Windu";
+
+// and add new ones on the fly:
+
+jedi.lightsaber = "Purple";
+
+// Properties can be any kind of data including objects and arrays. Adding an object as a 
+// property od another object creates a nested object:
+
+var person = {
+	age: 122;
+};
+
+person.name = {
+	first: "Jeanne";
+	last: "Calment";
+};
+
+// Creating an empty object and adding properties and methods to it is possible too:
+
+var dog = {};
+
+dog.bark = function() { alert("Woof!"); };
+
+// Arrays are a list of any kind of data, including other arrays. Each item in the array
+// has an index - a number - which can be used to retrieve an element from the array.
+
+// The indices start at 0; that is, the first element in the array has the index 0, and 
+// subsequent elements have incrementally increasing indices, so the last element in the
+// array has an index one lees than the length of the array.
+
+// In JavaScript, you creat an array using the array-literal syntax:
