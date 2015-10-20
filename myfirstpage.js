@@ -115,3 +115,56 @@ dog.bark = function() { alert("Woof!"); };
 // array has an index one lees than the length of the array.
 
 // In JavaScript, you creat an array using the array-literal syntax:
+
+var emptyArray = [];
+
+var shoppingList = ['Milk', 'Bread', 'Beans'];
+
+// You retreive a specific element from an array using square bracket syntax:
+
+shoppingList[0];
+// Milk
+
+// It's also possible to set the value at a particular index, again using the square
+// bracket syntax:
+
+shoppingList[1] = 'Cookies';
+// shoppingList is now ['Milk', 'Cookies', 'Beans']
+
+// You can find the number of elements in the array using its length property:
+
+shoppingList.length;
+// 3
+
+// You can use push and pop methods to add and remove elements from the end of an array:
+shoppingList.push('A new car');
+// shoppingList is now ['Milk', 'Bread', 'Beans', 'A new car']
+
+// Here's an example that creates, pushes, pops, and iterates over an array, passing each
+// passing each name to a function called helloFrom. helloFrom returns a string with a 
+// greeting: "Hell from" and then the person's name. After the pushing and popping, the
+// final list of people is: "Tom", "Yoda", "Ron" and "Bob".
+
+var helloFrom = function (personName){
+	return "Hello from" + personName
+}
+
+var people = ['Tom', 'Yoda', 'Jim'];
+
+people.push('Bob');
+people.push('Dr Evil');
+
+for (var i=0; i < people.length; i++) {
+	var greeting = helloFrom(people[i]);
+	alert(greeting);
+}
+
+// JavaScript Intermediate Tutorial
+
+// Okey dokey. You've nailed the basics then, hmmmm? Good Stuff. Have a cake. Once you've
+// eaten it, try your hand at some areas of JavaScript that will push you a little further.
+
+// The DOM:
+// The Document Object Model is a way to manipulate the structure and style of an HTML page.
+// it represents the internals of the page as the browser sees it, and allows the developer
+// to alter it with JavaScript.
