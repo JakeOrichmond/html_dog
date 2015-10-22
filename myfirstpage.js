@@ -278,5 +278,72 @@ button.addEventListener('click', handleClick);
 
 // To retrieve new content for a page, like new articles on an infinite-scroll site or
 // to notify you of new emails, a tool called XML HTTP REQUEST (XHR) is used. Web apps
-// that do this are also callled AJAX apps, AJAX standing for Asynchronous JavaScript and
+// that do this are also called AJAX apps, AJAX standing for Asynchronous JavaScript and
 // XML.
+
+// Almost all sites that pull in new content without a page reload (like Facebook, Gmail,
+// Google Maps, etc) use this same technique. In fact, it was Microsoft developing Outlook
+// Web Access who originally created the XMLHttpRequest.
+
+// XML HTTP Request
+
+// So what does an XMLHttpRequest look like?
+
+var req = new XMLHttpRequest();
+req.onload = function (event) {. . . };
+req.open('get','some-file.txt', true);
+req.send();
+
+// The first thing to do is create a new XMLHttpRequest request, using the new keyword,
+// and calling XMLHttpRequest like a function.
+
+// Then we specify a callback function, to be called when data is loaded. It is passed information 
+// about the event as its first argument. 
+
+// Then we specify how to get the data we want, using req.open. the first argument is the HTTP method 
+// (GET, POST, PUT etc). Next is the URL to fetch from - this is similar to the href attribute link.
+
+// The third is a boolean specifying whether the request is asynchronous - here we have it true,
+// so the XMLHttpRequest is fired off and then code execution continues until a response from the 
+// server causes the callback to be fired.
+
+// The asynchronous parameter defaults to false - if it's false, execution of the code will pause at 
+// this line until the data is retrieved and the request is called synchronous. Synchronous XMLHttpRequests
+// are not used often as a request to a server can, potentially, take an eternity. Which is a long time 
+// for the browser to be doing nothing.
+
+// On the last line we tell the browser to fire off the request for data.
+
+// Using an XMLHttpRequest you can load HTML, JSON, XML and plain text over HTTP and HTTPS, and it also 
+// supports other protocols like FTP and file. All in all, they're very useful for a whole range of 
+// tasks involved in developing JavaScript apps.
+
+// JSON
+
+// JavaScript Object Notation is no JavaScript. Officially it's a totally different language with its own
+// spec, but it's such an important part of JavaScript development that it's important to cover.
+
+// JSON is a set oif text formatting rules for storing and transferring data in a machine and human
+// readable way. It looks a lot like the object literal syntax of JavaScript, and it is from there
+// JSON originates.
+
+// Here's some JSON:
+
+{ "name": "Yoda", age: 894, "lightsaber" : {"color": "green" }}
+
+// Like in JavaScript, the brace notation is used.
+// Interestlingly, the above example is actually valid JavaScript.
+
+// JSON is used to transfer information - between your browser to a server, or saved in text files
+// for retrieval later - because it's simply text. That means you can't store complex data like a 
+// function, but you can store arrays, objects containing simple data, strings and numbers.
+
+// JSON is taking over from XML as the data-transfer format of the web, and many new web APIs are
+// written exclusively serving JSON, which can mean that you can be using AJAX technology to grab
+// JSON. But AJAJ ain't so catchy.
+
+// Using JSON
+
+// Data si either converted to or from JSON, using methods called stringify or parse respectively.
+// JSON is an object available in pretty much all modern browsers but there are ways of adding to a
+// browser that doesn't have it.
