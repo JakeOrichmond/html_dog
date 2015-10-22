@@ -320,10 +320,10 @@ req.send();
 
 // JSON
 
-// JavaScript Object Notation is no JavaScript. Officially it's a totally different language with its own
+// JavaScript Object Notation is not JavaScript. Officially it's a totally different language with its own
 // spec, but it's such an important part of JavaScript development that it's important to cover.
 
-// JSON is a set oif text formatting rules for storing and transferring data in a machine and human
+// JSON is a set of text formatting rules for storing and transferring data in a machine and human
 // readable way. It looks a lot like the object literal syntax of JavaScript, and it is from there
 // JSON originates.
 
@@ -344,6 +344,77 @@ req.send();
 
 // Using JSON
 
-// Data si either converted to or from JSON, using methods called stringify or parse respectively.
+// Data is either converted to or from JSON, using methods called stringify or parse respectively.
 // JSON is an object available in pretty much all modern browsers but there are ways of adding to a
 // browser that doesn't have it.
+
+var jsonString = JSON.stringify({
+	make: "McLaren",
+	model: "MP4-12C",
+	miles: 5023
+});
+
+// JSON.stringify converts an object into a JSON string. In this example, jsonString becomes 
+// {"make": "McLaren", "model": "MP4-12C", "miles": 5023 }.
+
+var car = JSON.parse(jsonString);
+
+// The string can then be converted back to a JavaScript object using JSON.parse.car is now usable as a 
+// normal JavaScript object, so you can set its properties:
+
+car.model = "P1";
+
+// SCOPE
+
+// Scope is the term used to mean variable visibility - a variable's scope is the part of your code that
+// can access and modify that variable. JavaScript has Function scope - but what does that mean and how
+// is it different to other languages.
+
+// Scope is, in many programming languages, dictated by the block in which the variable was declared. 
+// A block, in C-like languages, is anything between two curly braces, or indentation in a language
+// like Python. For example, the b variable below is not available outside the curly braces in which
+// it was declared:
+
+var a = 10;
+
+if (a > 5) {
+	var b = 5;
+}
+
+var c = a+ b; // Wouldn't work!!
+
+// Global variables - that is, variables that can be read and modified anywhere in your application - are
+// not good because they can expose security issues and make code much harder to maintain.
+
+// Remember that code is read much more than it's written. When reading code, if you can't determine where
+// a variable came from and what its potential values are, there's a problem.
+
+// So it's best to limit the scope of a variable as much as possible, making it visible to as few parts of 
+// your card as possible.
+
+// Function Scope
+
+// JavaScript does things a little differently. It uses function scope. This means that variables are not 
+// visible outside of the function in they were declared. If they are not declared inside a function then
+// they are available globally.
+
+// The example below demonstrates that a variable is only visible inside the function in which it was
+// declared. The doSomething function is the variable a's scope.
+
+var doSomething = function () {
+	var a = 10;
+};
+
+doSomething();
+
+console.log(a); // a is undefined
+
+// Comparing this to the block scope example above, you can see that, in JavaScript, b is available:
+
+var a = 10;
+
+if (a > 5) {
+	var b = 5;
+}
+
+var c = a + b; // c is 15
