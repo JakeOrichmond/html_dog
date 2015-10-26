@@ -418,3 +418,32 @@ if (a > 5) {
 }
 
 var c = a + b; // c is 15
+
+// Child Scopes
+
+// Variables are available in child scopes of their own scope. For example, doSomethingElse is a child
+// of doSomething, so a is visible inside doSomethingElse.
+
+var doSomething = function () {
+	var a = 10;
+
+var doSomethingElse = function () {
+	console.log(a); // a is 10
+};
+doSomethingElse();
+};
+
+doSomething();
+
+// Functional scope is a very powerful tool for creating elegant code, as we'll see, but it can take
+// some time to get your head around.
+
+// jQuery
+
+// The set of tools used to allow modification and control of the DOM are a bit of a mess because
+// they differ across browsers, generally for historical reasons. To make your job easier, a number
+// of libraries have been created that hide these differences, providing a more uniform way of
+// functionality with the DOM. Often they also provide AJAX funcionality, taking the burden of that
+// complexity away from you.
+
+// jQuery is by far and away the most popular DOM library and it is used on a huge number of websites.
