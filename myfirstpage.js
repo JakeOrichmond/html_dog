@@ -447,3 +447,26 @@ doSomething();
 // complexity away from you.
 
 // jQuery is by far and away the most popular DOM library and it is used on a huge number of websites.
+
+// By the way you interact with the DOM (or any service that you use via code) is called an Application
+// Programming Interface or API.
+
+// jQuery has a very distinctive syntax, all based around the dollar($) symbol. Here's some:
+$('.btn').click(function () {
+	//do something
+});
+
+// This code attached to a click handler to all elements witha class of btn. This selector syntax
+// is core to jQuery.
+
+// jQuery is added to a page by simply including it as a file using a script element. Download it
+// from jquery.com, or in it from a Content Delivery Network (CDN) such as CDNJS:
+
+<script src= "http://cdn.js.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+// In the following pages we'll be taking a look at jQuery for selecting and manipulating elements, AJAX 
+// and at some other useful tricks.
+
+// It's not always the best idea to use a library. and it's best to choose whether to use a framework based
+//  on the specific project. For example, jQuery is a large file to intrduce to a page and slow the 
+// downloading of that page, particularly on mobile browsers with potentially weak connections.
