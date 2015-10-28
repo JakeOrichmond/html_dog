@@ -468,5 +468,127 @@ $('.btn').click(function () {
 // and at some other useful tricks.
 
 // It's not always the best idea to use a library. and it's best to choose whether to use a framework based
-//  on the specific project. For example, jQuery is a large file to intrduce to a page and slow the 
-// downloading of that page, particularly on mobile browsers with potentially weak connections.
+// on the specific project. For example, jQuery is a large file to intrduce to a page and slow the 
+// downloading of that page, particularly on mobile browsers with potentially weak connections. 
+
+// jQuery: DOM API
+
+// Selecting elements and interacting with the DOM are things you'll probably use jQuery for the most.
+// Luckily it's really easy to do because the syntax for choosing an element, or set of elements, is 
+// exactly the same as element section in CSS.
+
+// jQuery also makes performing actions on many elements at the same time simple, which is incredibly
+// useful.
+
+// In the example below $('.note') selects all the elements with a class of note on the page and then 
+// we set the background of all of the note boxes to read and their heights to 100px.
+
+$('.note').css('background', 'red').height(100);
+
+// jQuery uses a really neat chainable syntax that allows code like the above. This works because,
+// for any kind of "setting" method, jQuery returns the same thing as the selector function ("$") 
+// does: $ is a function that returns a jQuery wrapper around an element. .css is a method that of
+// jQuery wrapper and it too returns the same wrapper. .height sets the height (duh) of the element
+// selected, and of course there's an equivalent for width.
+
+// Getters and setters
+
+// In the above example we used .css and .height to set the value of the element but these methods
+// are also getters. Calling .height without any value returns the current element's height and
+// calling .css with just a CSS property name retrieves the property's value.
+
+var currentHeight = $('.note').height(),
+	currentColor = $('.note').css('color');
+
+// If you've got more than one element selected (you have lots of note elements, say) a getter
+// will retrieve the value for the first of them.
+
+// Context
+
+// It's sometimes useful to limit the are of the DOM from which an element can be selected.
+// The area if the DOM used is also known as a different context.
+
+// To tell jQuery which area you want to select from you pass a second argument that can be a 
+// DOM element, a string selector (selecting an element that jQuery will find and use) or a 
+// jQuery object. jQuery will only search within this context for your selector.
+
+// Here's an example. Notice that the variables that are used to store the jQuery objects begin 
+// with a dollar. This is a convention to help you and readers of your code understand that it's
+// a jQuery object being saved.
+
+var $header = $('header'),
+	$headerBoxes = $('.note', $header);
+
+// jQuery: AJAX
+
+// jQuery has some AJAX helper methods that save time and are much easier to read. They are all
+// properties of $ variable: $.get, $.post, and $.ajax.
+
+// $.ajax is the main method, allowing you to mannually construct you AJAX request - the others 
+// are shortcuts to common configurations, like getting data or posting it.
+
+// Here's an example that gets some data from the server:
+
+$.ajax({
+	url:'/data.json',
+	method: 'GET',
+	success: function (data) {
+		console.log(data);
+	}
+});
+
+// You can see that a configuration object is used to tell jQuery how to get the data. The basics
+// are supplied: a URL, the method (which actually defaults to get) and a function to be called when
+// the data is received, named the success callback.
+
+// $.get
+
+// This example is just getting some data and, because this is a very common activity, jQuery provides
+// a helper $.get.
+
+$.get('/data.json', function (data) {
+	console.log(data);
+});
+
+// You can also provide an error callback, which will let you know if something goes wrong and the server
+// can't be reached:
+
+$.get('/data.json', function (data){
+	console.log(data);
+}).fail(function () {
+
+// Uh Oh something went wrong
+});
+
+// $.post
+
+// Sending data to a server is just as easy, using the $.post method. The second argument is the data to be
+// sent - it can be almost anything except a function: jQuery will figure out how to send it for you.
+// How convenient!
+
+$.post('/save', {username: 'tom'}, function (data) {
+	console.log(data);
+}).fail(function (){
+	// Uh oh, somethign went wrong
+});
+
+// $.ajax
+
+// Of course, if you want more control over how data is semt, use $.ajax to set the request up manually.
+
+$.ajax({
+	url: '/save',
+	method: 'POST'
+	data: {username: 'tom'},
+	success: function (data){
+		console.log(data);
+	}),
+	error: function(){
+		// Uh oh, somethign went wrong
+	}
+});	
+
+// jQuery: Other Tricks
+
+// jQuery also helps you out with other common tasks, particularly where things are inconsistent 
+// across browsers.
