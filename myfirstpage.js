@@ -1,3 +1,5 @@
+
+
 <script>
 	alert("Hello World.");
 </script>
@@ -592,3 +594,104 @@ $.ajax({
 
 // jQuery also helps you out with other common tasks, particularly where things are inconsistent 
 // across browsers.
+
+// DOMContentLoaded
+
+// Sometimes you will want to run JavaScript only when the DOM is loaded and ready (but before
+// stylesheets are fully loaded) - for example, to move elements to a different location in the
+// page, or create new ones. We can do this in pure JavaScript (although this will not work in 
+// all browsers):
+
+var doSomething = function (event) { . . . };
+window.addEventListener('DOMContentLoaded', doSomething);
+
+// But we can do it more easily with Jquery, and it will work cross-browser.
+
+$(window).ready(doSomething);
+
+// This can be shortened further to:
+
+$(doSomething);
+
+// In all the above examples, doSomething is a JavaScript function.
+
+// Load
+
+// In other situations it's better to wait for the page to fully load - that is, when all
+// stylesheets and images have been downloaded.
+
+// To do this without jQuery, listen for the load event on the window:
+
+window.addEventListener('load', doSomething);
+
+// But it's even easier with jQuery:
+
+$(window).load(doSomething);
+
+// Type checking
+
+// Finding out what kind of data is stored in a variable in JavaScript is awkward at best so 
+// jQuery provides some tools to help you out.
+
+$.isArray([1, 2, 3]);
+true
+
+$.isFunction(function () { });
+true
+
+$.isNumeric(10);
+true
+
+$.isPlainObject({ name: 'Tom' });
+true
+
+// JavaScript Advanced Tutorial
+
+// JavaScript is huge. Like, really big. Like a bus. For elephants. Injected with growth 
+// hormones. In this guide we'll look at some of the more numerous more advanced aspects
+// of programming with the language.
+
+// Object-Oriented Code
+
+// Humans are good at categorizing. Objects are a way to categorize behavior and data, making
+// large amounts of code easier to design and think about. In fact, object-oriented programming
+// can be found in many languages used to build all kinds of software and is considered a very
+// good way to write code.
+
+// We've already looked at objects in JavaScript - they're collections of named properties
+// and methods, and they can be created on the fly using the object literal syntax:
+
+var user = {
+	name: 'tom',
+	say: function (words) { alert(words); }
+};
+
+// One reason using objects to hold data is useful is that, as mentioned, human brains are
+// very good at categorizing things: a boat; a chair; a moose. Creating objects in code helps
+// you to think about how the different parts of your code fit and (hopefully) work together.
+
+// In a large application you may have a great number of objects interacting with each other.
+// Remember that objects are a grouping together of properties (like name) and methods (like say)?
+// This grouping of data and behavior into one entity is called encapsulation.
+
+// A powerful tool available to you when building applications using objects is called inheritance.
+// This is where an object inherits properties and methods from another object. An object can alter
+// the properties and methods it inherits and add additional properties and methods too.
+
+// So, for example, you could create a moose object that inherits behavior from a mammal object.
+// The moose could alter the mammal's furriness, for example. You could then create a pangolin
+// object that also inherits from a mammal. But, of course, pangolins aren't furry, and they might 
+// have a different scaliness property.
+
+// How do objects inherit?
+
+// JavaScript uses prototypal inheritance. This means thatm when an object inherits from another,
+// the parent object is known as the child's prototype.
+
+// There are a couple of other things to know: every object maintains a reference to its prototype
+// and every object inherits from the global object object.
+
+// When you ask for a property of an object, JavaScript looks for the property on that object. If it
+// doesn't find it there, it follows the link to the object's prototype and looks for the property
+// there. It continues this, up the prototype chain until it finds it, or it returns undefined.
+
